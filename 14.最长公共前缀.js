@@ -23,28 +23,28 @@ var longestCommonPrefix = function(strs) {
         shortestLen = str.length;
       }
     })
-    if (!shortestLen.length) {
+    if (!shortestLen) {
       return ''
     }
-    for (let i = 1; i < shortestLen; i++) {
-      for (let j = 0; j < number; i++) {
-        if (strs[i - 1][j] !== strs[i][j]) {
+    for (let i = 1; i < number; i++) {
+      for (let j = 0; j < shortestLen; j++) {
+        if (strs[i][j] !== strs[i - 1][j]) {
           if (j === 0) {
             return ''
           } else {
             break;
           }
-        } else {
+        }
+         else {
           if (i === number - 1) {
             n++;
           }
         }
       }
     }
-    console.log(n)
-    return strs[0].slice(0, n + 1);
+    return strs[0].slice(0, n);
   }
 };
-// let rlt = longestCommonPrefix(["dogs","racecar","car"]);
-// console.log(rlt)
+let rlt = longestCommonPrefix(["acc","aaa","aaba"]);
+console.log(rlt)
 
